@@ -6,7 +6,7 @@ import (
 	"regexp"
 
 	"github.com/TomiLabo/tmngparser/ast"
-	"github.com/TomiLabo/tmngparser/category"
+	"github.com/TomiLabo/tmngparser/token"
 	"github.com/mattn/go-runewidth"
 )
 
@@ -37,25 +37,25 @@ func Parse(data []string) []ast.Tml {
 	var result []ast.Tml
 	for i, l := range data {
 		if match(`^■`, l) {
-			node := ast.New(i, category.Header, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.Header, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		} else if match(`^●`, l) {
-			node := ast.New(i, category.Title, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.Title, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		} else if match(`^◎`, l) {
-			node := ast.New(i, category.SubTitle, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.SubTitle, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		} else if match(`^○`, l) {
-			node := ast.New(i, category.ListItem, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.ListItem, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		} else if match(`^\n|^\r`, l) {
-			node := ast.New(i, category.Empty, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.Empty, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		} else if match(`^\s+○`, l) || match(`^\s+●`, l) || match(`^\s+◎`, l) {
-			node := ast.New(i, category.Error, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.Error, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		} else {
-			node := ast.New(i, category.PlaneText, l, 0, runewidth.StringWidth(l))
+			node := ast.New(i, token.PlaneText, l, 0, runewidth.StringWidth(l))
 			result = append(result, node)
 		}
 	}

@@ -1,4 +1,4 @@
-package category
+package token
 
 // Code category code
 type Code string
