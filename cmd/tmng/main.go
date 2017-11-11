@@ -7,7 +7,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/maxmellon/tmng-parser"
+	"github.com/tomilabo/tmngparser"
 )
 
 // VERSION  version infomation

@@ -1,7 +1,7 @@
 package ast
 
 import (
-	"github.com/maxmellon/tmng-parser/category"
+	"github.com/tomilabo/tmngparser/category"
 )
 
 // Tml ast

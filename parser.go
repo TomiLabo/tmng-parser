@@ -6,8 +6,8 @@ import (
 	"regexp"
 
 	"github.com/mattn/go-runewidth"
-	"github.com/maxmellon/tmng-parser/ast"
-	"github.com/maxmellon/tmng-parser/category"
+	"github.com/tomilabo/tmngparser/ast"
+	"github.com/tomilabo/tmngparser/category"
 )
 
 func match(reg, str string) bool {
