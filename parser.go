@@ -5,9 +5,9 @@ import (
 	"os"
 	"regexp"
 
+	"github.com/TomiLabo/tmngparser/ast"
+	"github.com/TomiLabo/tmngparser/category"
 	"github.com/mattn/go-runewidth"
-	"github.com/maxmellon/tmng-parser/ast"
-	"github.com/maxmellon/tmng-parser/category"
 )
 
 func match(reg, str string) bool {
